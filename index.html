@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Search</title>
+        <style>
+            .ayzqOc{
+                font-size: 14px;
+                font-family: arial,sans-serif;
+                cursor: pointer;
+                display: block;
+                padding: 15px;
+                white-space: nowrap;
+                color: #202124;
+            }
+            #settings{
+                position: absolute;
+                bottom: 0px;
+            }
+            /* Popup container - can be anything you want */
+            .popup {
+                position: relative;
+                display: inline-block;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            /* The actual popup */
+            .popup .popuptext {
+                visibility: hidden;
+                width: 160px;
+                background-color: #555;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 8px 0;
+                position: absolute;
+                z-index: 1;
+                bottom: 125%;
+                left: 50%;
+                margin-left: -80px;
+            }
+
+            /* Toggle chained class to show/hide popups */
+            .popup.show .popuptext {
+                visibility: visible;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="https://www.google.com/search">
+            <!-- Made the input required since in google
+                 nothing should happen if the input is empty.
+                 I didn't want to use JavaScript for this since
+                 the project is focusing on HTML & CSS. -->
+            <input type="text" name="q" required>
+            <!-- Named the hidden id as "sca_esv" since google also used that -->
+            <input type="hidden" id="sca_esv" name="sca_esv" value="11235">
+            <input type="submit" value="Google Search">
+        </form>
+        <a href="https://doodles.google/">
+            <button> I'm Feeling Lucky </button>
+        </a>
+        <a href="imageSearch.html">
+            <button> Google Images </button>
+        </a>
+        <a href="advancedSearch.html">
+            <button> Advanced Search </button>
+        </a>
+
+        <div class="popup" id="settings"> <button> Settings</button>
+            <div class="popuptext">
+                <menu>
+                    <button> Search settings </button>
+                    <br>
+                    <a href="advancedSearch.html"> <button> Advanced search </button> </a>
+                    <br>
+                    <button> Your data in Search </button>
+                    <br>
+                    <button> Search history </button>
+                    <br>
+                    <button> Search help </button>
+                    <br>
+                    <button> Send feedback </button>
+                </menu>
+          </div>
+          
+          <script>
+
+                const popup = document.querySelector('.popup');
+                const settingsButton = document.querySelector('.popup button');
+
+                settingsButton.addEventListener('click', () => {
+                    // Whenever Settings button is clicked, toggles the
+                    // class show which adds/removes the popup when clicked.
+                    popup.classList.toggle('show');
+                });
+                // Event listener that listens for all clicks, assigns the element clicked to 'target'
+                window.addEventListener('click', ({ target }) => {
+                    // When clicked inside the popup div and the button that reveals popup
+                    const clickedInsidePopup = popup.contains(target);
+                    
+                    // When clicked anywhere else besides inside the popup, remove show class
+                    if (!clickedInsidePopup) {
+                        popup.classList.remove('show');
+                    }
+                });
+          </script>
+        
+        
+    </body>
+</html>
