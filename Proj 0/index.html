@@ -5,113 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
     <header>
         <nav>
-            <a href="#">Gmail</a>
-            <a href="#">Images</a>
+            <a href="#"> Gmail </a>
+            <a href="imageSearch.html">
+                Images
+            </a>
             <img src="Images/grid.png">
-            <button>Sign in</button>
+            <button id="signIn"> Sign in </button>
         </nav>
     </header>
     <section>
         <img src="Images/googleLogo.png" class="logo">
-        <form><br><br>
+        <form action="https://www.google.com/search">
             <div class="searchContainer">
                 <img src="Images/searchIcon.png" class="search-icon">
-                <input type="text" id="inputText" class="searchBox">
+                <i class="material-icons" id="clearAllInput">close</i>
                 <span id="divider"></span>
-                <img src="Images/googleLens.png" class="icon1">
-                <img src="Images/imageSearch.png" class="icon2">
-                <input type="submit" class="s-btn" value="Google Search">
-                <input type="submit" class="s-btn" value="I'm Feeling Lucky">
+                <img src="Images/googleLens.png" class="googleLens">
+                <img src="Images/imageSearch.png" class="googleVoice">
+                <input type="text" id="inputText" class="searchBox" name="q">
+                <input type="submit" class="searchButton" value="Google Search">
+                <a class="lucky" href="https://doodles.google/">
+                    I'm Feeling Lucky
+                </a>
             </div>
         </form>
-        <div class="lang">
+        <div class="languages">
             Google offered in:
             <a href="#">Filipino</a>
             <a href="#">Cebuano</a>
         </div>
     </section>
     <footer>
-        <h4>Philippines</h4>
+        <div class="country">Philippines</div>
         <div class="links">
-            <div class="link-1">
+            <div class="link-left">
                 <a href="#">About</a>
                 <a href="#">Advertising</a>
                 <a href="#">Business</a>
                 <a href="#">How Search works</a>
             </div>
-            <div class="link-2">
+            <div class="link-right">
                 <a href="#">Privacy</a>
                 <a href="#">Terms</a>
-                <a href="#">Settings</a>
+                <div class="popup" id="settings"> <button> Settings </button>
+                    <div>
+                        <menu class="popuptext">
+                            <a> Search settings </a>
+                            <a href="advancedSearch.html"> <button> Advanced search </button> </a>
+                            <a> Your data in Search </a>
+                            <a> Search history </a>
+                            <a> Search help </a>
+                            <a> Send feedback </a>
+                            <span class="horizontalDivider"></span>
+                            <a> Dark theme: Off </a>
+                        </menu>
+                  </div>
             </div>
         </div>
     </footer>
-    <!-- <a href="https://doodles.google/">
-        <button> I'm Feeling Lucky </button>
-    </a>
-    <a href="imageSearch.html">
-        <button> Google Images </button>
-    </a>
-    <a href="advancedSearch.html">
-        <button> Advanced Search </button>
-    </a>
+    <script>
 
-    <div class="popup" id="settings"> <button> Settings</button>
-        <div class="popuptext">
-            <menu>
-                <button> Search settings </button>
-                <br>
-                <a href="advancedSearch.html"> <button> Advanced search </button> </a>
-                <br>
-                <button> Your data in Search </button>
-                <br>
-                <button> Search history </button>
-                <br>
-                <button> Search help </button>
-                <br>
-                <button> Send feedback </button>
-            </menu>
-      </div> -->
-      
-      <script>
+        const popup = document.querySelector('.popup');
+        const settingsButton = document.querySelector('.popup button');
 
-            const popup = document.querySelector('.popup');
-            const settingsButton = document.querySelector('.popup button');
-
-            settingsButton.addEventListener('click', () => {
-                // Whenever Settings button is clicked, toggles the
-                // class show which adds/removes the popup when clicked.
-                popup.classList.toggle('show');
-            });
-            // Event listener that listens for all clicks, assigns the element clicked to 'target'
-            window.addEventListener('click', ({ target }) => {
-                // When clicked inside the popup div and the button that reveals popup
-                const clickedInsidePopup = popup.contains(target);
-                
-                // When clicked anywhere else besides inside the popup, remove show class
-                if (!clickedInsidePopup) {
-                    popup.classList.remove('show');
-                }
-            });
-
-            var b = document.getElementById('divider');
-            var input = document.getElementById("inputText");
-            b.style.display = "none";
+        settingsButton.addEventListener('click', () => {
+            // Whenever Settings button is clicked, toggles the
+            // class show which adds/removes the popup when clicked.
+            popup.classList.toggle('show');
+        });
+        // Event listener that listens for all clicks, assigns the element clicked to 'target'
+        window.addEventListener('click', ({ target }) => {
+            // When clicked inside the popup div and the button that reveals popup
+            const clickedInsidePopup = popup.contains(target);
             
-            window.addEventListener('input', function() {
-
-            if(input.value === ""){
-            b.style.display = "none";
+            // When clicked anywhere else besides inside the popup, remove show class
+            if (!clickedInsidePopup) {
+                popup.classList.remove('show');
             }
-            else{
+        });
 
-            b.style.display = "inline-block";
-            }
-            });
-      </script>
+        const divider = document.getElementById('divider');
+        const clear = document.getElementById('clearAllInput');
+        const input = document.getElementById("inputText");
+        divider.style.display = "none";
+        clear.style.display = "none";
+        
+        window.addEventListener('input', () => {
+
+        if(input.value === ""){
+            divider.style.display = "none";
+            clear.style.display = "none";
+        }
+        else{
+            divider.style.display = "inline-block";
+            clear.style.display = "inline-block";
+        }
+        });
+
+        document.getElementById('luckyButton').addEventListener('click', () => {
+            window.location.href = 'https://doodles.google.com/';
+        });
+    </script>
 </body>
 </html>
