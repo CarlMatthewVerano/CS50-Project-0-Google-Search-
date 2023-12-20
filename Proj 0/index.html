@@ -18,10 +18,12 @@
     <section>
         <img src="Images/googleLogo.png" class="logo">
         <form><br><br>
-            <div class="s-box">
+            <div class="searchContainer">
                 <img src="Images/searchIcon.png" class="search-icon">
-                <input type="text" class="s-input">
-                <img src="img/vs.png" class="vs-icon">
+                <input type="text" id="inputText" class="searchBox">
+                <span id="divider"></span>
+                <img src="Images/googleLens.png" class="icon1">
+                <img src="Images/imageSearch.png" class="icon2">
                 <input type="submit" class="s-btn" value="Google Search">
                 <input type="submit" class="s-btn" value="I'm Feeling Lucky">
             </div>
@@ -36,9 +38,9 @@
         <h4>Philippines</h4>
         <div class="links">
             <div class="link-1">
+                <a href="#">About</a>
                 <a href="#">Advertising</a>
                 <a href="#">Business</a>
-                <a href="#">About</a>
                 <a href="#">How Search works</a>
             </div>
             <div class="link-2">
@@ -94,6 +96,21 @@
                 if (!clickedInsidePopup) {
                     popup.classList.remove('show');
                 }
+            });
+
+            var b = document.getElementById('divider');
+            var input = document.getElementById("inputText");
+            b.style.display = "none";
+            
+            window.addEventListener('input', function() {
+
+            if(input.value === ""){
+            b.style.display = "none";
+            }
+            else{
+
+            b.style.display = "inline-block";
+            }
             });
       </script>
 </body>
