@@ -335,6 +335,16 @@ footer a:hover {
     vertical-align: middle;
 }
 
+form {
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+    text-decoration: none;
+}
 
 .fields {
     width: 50%;
@@ -346,8 +356,15 @@ footer a:hover {
 }
 
 .fields label {
+    float: left;
+    display: inline-block;
+    min-width: 167px;
     width: 16%;
-	float: left;
+    height: 42px;
+    color: #222;
+    font-size: 13px;
+    line-height: 16px;
+    vertical-align: middle;
 }
 
 .fields2 {
@@ -358,4 +375,102 @@ footer a:hover {
 	.fields2 {
 		display: none;
 	}
+}
+
+.otByu {
+    width: 100%;
+    clear: both;
+}
+.yIQOUb {
+    clear: both;
+}
+
+.I1Kbt, .lFApYd {
+    float: left;
+    min-width: 167px;
+    width: 16%;
+    font-size: 16px;
+    min-height: 42px;
+    font-weight: 500;
+    color: #333;
+    vertical-align: middle;
+}
+
+.lOTAE {
+    height: 30px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.HoCfzc {
+    float: left;
+    min-width: 167px;
+    min-height: 41px;
+    vertical-align: middle;
+    width: 50%;
+}
+
+.orcpGe {
+    float: left;
+    width: 33%;
+    font-size: 13px;
+    font-weight: 700;
+    color: #777;
+    padding-left: 5px;
+    vertical-align: middle;
+}
+
+.FAcADc {
+    float: left;
+    min-width: 167px;
+    width: 16%;
+    height: 42px;
+    color: #222;
+    font-size: 13px;
+    line-height: 16px;
+    vertical-align: middle;
+}
+.jYcx0e {
+    float: left;
+    min-width: 167px;
+    min-height: 41px;
+    vertical-align: middle;
+    width: 50%;
+}
+.PLLUQc {
+    padding-right: 16px;
+}
+.jYcx0e input[type=text], .PnexQd {
+    width: 100%;
+    text-align: left;
+}
+.jfk-textinput {
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    border: 1px solid #d9d9d9;
+    border-top: 1px solid #c0c0c0;
+    font-size: 13px;
+    height: 25px;
+    padding: 1px 8px;
+}
+input[type="text" i] {
+    padding-block: 1px;
+    padding-inline: 2px;
+}
+.cwqNnb {
+    float: left;
+    width: 32%;
+    min-width: 160px;
+    margin: 0 0 8px 1%;
+    color: #555;
+    font-size: 11px;
+    padding-left: 5px;
+    vertical-align: middle;
+    position: relative;
+}
+.BFlQMb {
+    color: #666;
+    font-family: monospace;
+    font-size: 11px;
 }
