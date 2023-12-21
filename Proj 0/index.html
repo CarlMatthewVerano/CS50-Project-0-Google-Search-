@@ -10,9 +10,11 @@
 <body>
     <header>
         <nav>
-            <a href="#"> Gmail </a>
             <a href="imageSearch.html">
-                Images
+                Image Search
+            </a>
+            <a href="advancedSearch.html">
+                Advanced search
             </a>
             <img src="Images/grid.png">
             <button id="signIn"> Sign in </button>
@@ -20,14 +22,14 @@
     </header>
     <section>
         <img src="Images/googleLogo.png" class="logo">
-        <form action="https://www.google.com/search">
+        <form onsubmit="submitForm()" action="https://www.google.com/search">
             <div class="searchContainer">
                 <img src="Images/searchIcon.png" class="search-icon">
-                <i class="material-icons" id="clearAllInput">close</i>
+                <i class="material-icons" id="clearAllInput" onclick="clearFields();">close</i>
                 <span id="divider"></span>
                 <img src="Images/googleLens.png" class="googleLens">
                 <img src="Images/imageSearch.png" class="googleVoice">
-                <input type="text" id="inputText" class="searchBox" name="q">
+                <input type="text" id="inputText" value="" class="searchBox" name="q">
                 <input type="submit" class="searchButton" value="Google Search">
                 <a class="lucky" href="https://doodles.google/">
                     I'm Feeling Lucky
@@ -50,44 +52,13 @@
                 <a href="#">How Search works</a>
             </div>
             <div class="link-right">
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
-                <div class="popup" id="settings"> <button> Settings </button>
-                    <div>
-                        <menu class="popuptext">
-                            <a> Search settings </a>
-                            <a href="advancedSearch.html"> <button> Advanced search </button> </a>
-                            <a> Your data in Search </a>
-                            <a> Search history </a>
-                            <a> Search help </a>
-                            <a> Send feedback </a>
-                            <span class="horizontalDivider"></span>
-                            <a> Dark theme: Off </a>
-                        </menu>
-                  </div>
+                <a href="#"> Privacy </a>
+                <a href="#"> Terms </a>
+                <a href="#"> Settings </a>
             </div>
-        </div>
+        <div>
     </footer>
     <script>
-
-        const popup = document.querySelector('.popup');
-        const settingsButton = document.querySelector('.popup button');
-
-        settingsButton.addEventListener('click', () => {
-            // Whenever Settings button is clicked, toggles the
-            // class show which adds/removes the popup when clicked.
-            popup.classList.toggle('show');
-        });
-        // Event listener that listens for all clicks, assigns the element clicked to 'target'
-        window.addEventListener('click', ({ target }) => {
-            // When clicked inside the popup div and the button that reveals popup
-            const clickedInsidePopup = popup.contains(target);
-            
-            // When clicked anywhere else besides inside the popup, remove show class
-            if (!clickedInsidePopup) {
-                popup.classList.remove('show');
-            }
-        });
 
         const divider = document.getElementById('divider');
         const clear = document.getElementById('clearAllInput');
@@ -110,6 +81,18 @@
         document.getElementById('luckyButton').addEventListener('click', () => {
             window.location.href = 'https://doodles.google.com/';
         });
+        function clearFields() {
+            document.getElementById("inputText").value = "";
+            clear.style.display = "none";
+            divider.style.display = "none";
+        }
+
+        function submitForm(){
+            if (input.value.trim() === "") {
+                event.preventDefault();
+            }
+        }
+            
     </script>
 </body>
 </html>

@@ -71,6 +71,14 @@ section .logo {
     height: 92px;
 }
 
+.googleImages {
+	display: block;
+	margin: auto;
+	margin-top: 22vh;
+    width: 272px;
+    height: 100px;
+}
+
 .searchContainer {
 	width: 580px;
 	margin: auto;
@@ -85,7 +93,7 @@ section .logo {
 	color: rgba(0,0,0, 0.87);
 	font-size: 16px;
 	padding: 13px;
-	padding-left: 45px;
+	padding-left: 35px;
 	border-radius: 24px;
 	width: 90%;
 	outline: none;
@@ -98,11 +106,26 @@ section .logo {
 }
 
 .search-icon {
-	width: 20px;
+	width: 15px;
+	height: 15px;
 	opacity: .4;
 	position: absolute;
-	top: 13px;
+	top: 15px;
 	left: 14px;
+}
+
+#search-icon2 {
+	width: 14px;
+	height: 20px;
+	position: absolute;
+	color: #4285f4;
+	top: 13px;
+	right: 35px;
+	border: none;
+    background: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
 }
 
 #clearAllInput {
@@ -115,11 +138,29 @@ section .logo {
 	color: #70757a;;
 }
 
+#clearAllInput2 {
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	top: 10px;
+	right: 170px;
+	cursor: pointer;
+	color: #70757a;;
+}
+
 #divider {
 	border-left: 1px solid #dadce0;
     height: 25%;
 	top: 7px;
 	right: 90px;
+	position: absolute;
+}
+
+#divider2 {
+	border-left: 1px solid #dadce0;
+    height: 60%;
+	top: 9px;
+	right: 145px;
 	position: absolute;
 }
 
@@ -138,6 +179,24 @@ section .logo {
 	position: absolute;
 	top: 13px;
 	right: 60px;
+	cursor: pointer;
+}
+
+.googleLens2 {
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	top: 11px;
+	right: 66px;
+	cursor: pointer;
+}
+
+.googleVoice2 {
+	width: 14px;
+	height: 20px;
+	position: absolute;
+	top: 13px;
+	right: 110px;
 	cursor: pointer;
 }
 
@@ -215,7 +274,7 @@ footer a:hover {
 	flex: 1;
 }
 
-.popup {
+/* .popup {
     position: relative;
     display: inline-block;
 
@@ -229,7 +288,7 @@ footer a:hover {
     border-radius: 8px;
     position: absolute;
     left: -160px;
-    bottom: 160%;
+    bottom: 90%;
 	display: block;
 	padding: 5px 0;
 	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2);
@@ -240,8 +299,6 @@ footer a:hover {
 	padding: 4px 16px;
 }
 
-
-/* Toggle chained class to show/hide popups */
 .popup.show .popuptext {
     visibility: visible;
-}
+} */

@@ -1,12 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Search</title>
-    </head>
-    <body>
-        <form action="https://www.google.com/images">
-            <input type="text" name="q">
-            <input type="submit" value="Google Image Search">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="imageSearch.html">
+                Image Search
+            </a>
+            <a href="advancedSearch.html">
+                Advanced search
+            </a>
+            <img src="Images/grid.png">
+            <button id="signIn"> Sign in </button>
+        </nav>
+    </header>
+    <section>
+        <img src="Images/googleImages.png" class="googleImages" id="searchForm">
+        <form onsubmit="submitForm()" action="https://www.google.com/images">
+            <div class="searchContainer">
+                <img src="Images/searchIcon.png" class="search-icon">
+                <i class="material-icons" id="clearAllInput2" onclick="clearFields();">close</i>
+                <span id="divider2"></span>
+                <img src="Images/googleLens.png" class="googleLens2">
+                <img src="Images/imageSearch.png" class="googleVoice2">
+                <input type="text" id="inputText" value="" class="searchBox" name="q">
+                <button class="material-icons" id="search-icon2" >search</button>
+            </div>
         </form>
-    </body>
+    </section>
+    <footer>
+        <div class="country">Philippines</div>
+        <div class="links">
+            <div class="link-left">
+                <a href="#">About</a>
+                <a href="#">Advertising</a>
+                <a href="#">Business</a>
+                <a href="#">How Search works</a>
+            </div>
+            <div class="link-right">
+                <a href="#"> Privacy </a>
+                <a href="#"> Terms </a>
+                <a href="#"> Settings </a>
+            </div>
+        <div>
+    </footer>
+    <script>
+
+        const divider = document.getElementById('divider2');
+        const clear = document.getElementById('clearAllInput2');
+        const input = document.getElementById("inputText");
+        divider.style.display = "none";
+        clear.style.display = "none";
+        
+        window.addEventListener('input', () => {
+            if(input.value === ""){
+                divider.style.display = "none";
+                clear.style.display = "none";
+            }
+            else{
+                divider.style.display = "inline-block";
+                clear.style.display = "inline-block";
+            }
+        });
+
+        document.getElementById('luckyButton').addEventListener('click', () => {
+            window.location.href = 'https://doodles.google.com/';
+        });
+        function clearFields() {
+            document.getElementById("inputText").value = "";
+            clear.style.display = "none";
+            divider.style.display = "none";
+        }
+
+        function submitForm(){
+            if (input.value.trim() === "") {
+                event.preventDefault();
+            }
+        }
+            
+    </script>
+</body>
 </html>
